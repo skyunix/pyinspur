@@ -147,13 +147,13 @@ class InspurClient:
         for record in records:
             date = record["SIGNTIME"]
 
-            sign_in_time = record["SIGNINTIME"]
+            sign_in_time = record.get("SIGNINTIME", "")
             if not sign_in_time or sign_in_time == "-":
                 sign_in = "未签到"
             else:
                 sign_in = sign_in_time
 
-            sign_out_time = record["SIGNOUTTIME"]
+            sign_out_time = record.get("SIGNOUTTIME", "")
             if not sign_out_time or sign_out_time == "-":
                 sign_out = "未签退"
             else:
