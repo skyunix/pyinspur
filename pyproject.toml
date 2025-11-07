@@ -1,0 +1,21 @@
+[project]
+name = "pyinspur"
+version = "0.1.0"
+description = "浪潮考勤自动化脚本"
+readme = "README.md"
+requires-python = ">=3.8.1"
+dependencies = [
+    "PyYAML>=6.0.2",
+    "requests>=2.32.4",
+    "loguru>=0.7.2",
+]
+
+[project.scripts]
+pyinspur = "main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["inspur"]

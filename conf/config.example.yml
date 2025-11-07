@@ -1,0 +1,37 @@
+# PyInspur 考勤系统配置文件模板
+# 此文件仅作为参考，实际配置由程序自动管理
+
+# =========================
+# 用户配置（可手动修改）
+# =========================
+user_config:
+  # 默认考勤位置（根据实际办公地点修改）
+  default_location: 117.1284250000,36.6620030000
+  
+  # 默认密码（MD5加密，可选配置）
+  default_password: ""
+  
+  # 应用设置
+  app_settings:
+    auto_query_after_check: true   # 是否自动查询考勤记录
+    random_radius_meters: 30       # 坐标随机化半径（米）
+    log_level: DEBUG                # 日志级别（DEBUG/INFO）
+
+# =========================
+# 程序数据（程序自动管理）
+# =========================
+app_data:
+  # 当前登录用户
+  current_user: ""
+  
+  # 已保存的用户列表（手机号和密码都经过MD5加密）
+  saved_users: []
+  
+  # 考勤客户端UUID（为每个用户保存的考勤客户端唯一标识）
+  client_uuids: {}
+  
+  # 考勤点数据
+  attendance_data:
+    sites: {}                     # 考勤点信息
+    checkin_site_address: ""      # 签到考勤点地址
+    checkout_site_address: ""     # 签退考勤点地址（模拟公司内签退，选择最近的考勤点）
